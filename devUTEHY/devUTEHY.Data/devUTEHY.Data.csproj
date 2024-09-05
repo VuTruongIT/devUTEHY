@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202409041559584_KhoiTaoCSDL-demo-lan1.designer.cs">
       <DependentUpon>202409041559584_KhoiTaoCSDL-demo-lan1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202409051448465_AspNetIdentity.cs" />
+    <Compile Include="Migrations\202409051448465_AspNetIdentity.designer.cs">
+      <DependentUpon>202409051448465_AspNetIdentity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -100,6 +104,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202409041559584_KhoiTaoCSDL-demo-lan1.resx">
       <DependentUpon>202409041559584_KhoiTaoCSDL-demo-lan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409051448465_AspNetIdentity.resx">
+      <DependentUpon>202409051448465_AspNetIdentity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

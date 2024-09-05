@@ -4,7 +4,7 @@ using devUTEHY.Model.Models;
 
 namespace devUTEHY.Data
 {
-    public class devUTEHYDbContext : DbContext
+    public class devUTEHYDbContext : IdentityDbContext<ApplicationUser>
     {
         public devUTEHYDbContext() : base("DevUTEHYConnection")
         {

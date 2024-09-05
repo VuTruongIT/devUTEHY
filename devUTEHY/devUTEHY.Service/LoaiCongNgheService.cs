@@ -7,13 +7,13 @@ namespace devUTEHY.Service
 {
     public interface ILoaiCongNgheService
     {
+        IEnumerable<LoaiCongNghe> GetAll();
+
         LoaiCongNghe Add(LoaiCongNghe LoaiCongNghe);
 
         void Update(LoaiCongNghe LoaiCongNghe);
 
         LoaiCongNghe Delete(int id);
-
-        IEnumerable<LoaiCongNghe> GetAll();
 
         IEnumerable<LoaiCongNghe> GetAllByParentId(int parentId);
 
@@ -32,6 +32,10 @@ namespace devUTEHY.Service
             this._LoaiCongNgheRepository = LoaiCongNgheRepository;
             this._unitOfWork = unitOfWork;
         }
+        public IEnumerable<LoaiCongNghe> GetAll()
+        {
+            return _LoaiCongNgheRepository.GetAll();
+        }
 
         public LoaiCongNghe Add(LoaiCongNghe LoaiCongNghe)
         {
@@ -41,11 +45,6 @@ namespace devUTEHY.Service
         public LoaiCongNghe Delete(int id)
         {
             return _LoaiCongNgheRepository.Delete(id);
-        }
-
-        public IEnumerable<LoaiCongNghe> GetAll()
-        {
-            return _LoaiCongNgheRepository.GetAll();
         }
 
         public IEnumerable<LoaiCongNghe> GetAllByParentId(int parentId)
