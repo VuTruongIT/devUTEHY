@@ -223,6 +223,13 @@
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
     <Content Include="app\components\home\rootController.js" />
+    <Content Include="app\components\LoaiCongNghe\loaiCongNgheAddController.js" />
+    <Content Include="app\components\LoaiCongNghe\loaiCongNgheAddView.html" />
+    <Content Include="app\components\LoaiCongNghe\loaiCongNgheEditController.js" />
+    <Content Include="app\components\LoaiCongNghe\loaiCongNgheEditView.html" />
+    <Content Include="app\components\LoaiCongNghe\loaiCongNghes.module.js" />
+    <Content Include="app\components\LoaiCongNghe\loaiCongNgheListView.html" />
+    <Content Include="app\components\LoaiCongNghe\loaiCongNgheListController.js" />
     <Content Include="app\components\login\loginController.js" />
     <Content Include="app\components\login\loginView.html" />
     <Content Include="app\shared\directives\pagerDirective.html" />
