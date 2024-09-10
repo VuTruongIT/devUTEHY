@@ -60,6 +60,8 @@
     <Compile Include="Abstract\Abstract.cs" />
     <Compile Include="Abstract\IAuditable.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\CongNghe.cs" />
+    <Compile Include="Models\CongNgheTags.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\KhoaHoc.cs" />
     <Compile Include="Models\KhoaHocTags.cs" />

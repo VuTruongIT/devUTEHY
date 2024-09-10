@@ -58,6 +58,11 @@
     <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\CKFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -198,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\CongNgheController.cs" />
     <Compile Include="Api\LoaiCongNgheController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -215,11 +221,21 @@
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\CongNgheTagsViewModel.cs" />
+    <Compile Include="Models\CongNgheViewModel.cs" />
     <Compile Include="Models\LoaiCongNgheViewModel.cs" />
+    <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\components\CongNghe\congNgheAddController.js" />
+    <Content Include="app\components\CongNghe\congNgheAddView.html" />
+    <Content Include="app\components\CongNghe\congNgheEditController.js" />
+    <Content Include="app\components\CongNghe\congNgheEditView.html" />
+    <Content Include="app\components\CongNghe\congNgheListController.js" />
+    <Content Include="app\components\CongNghe\congNgheListView.html" />
+    <Content Include="app\components\CongNghe\congNghes.module.js" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
     <Content Include="app\components\home\rootController.js" />
@@ -4026,6 +4042,99 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Libs\CKFinder.dll" />
+    <Content Include="UploadedFiles\files\ba.jpg" />
+    <Content Include="UploadedFiles\files\baa.jpg" />
+    <Content Include="UploadedFiles\files\bag.jpg" />
+    <Content Include="UploadedFiles\files\bag1.jpg" />
+    <Content Include="UploadedFiles\files\bo.jpg" />
+    <Content Include="UploadedFiles\files\bott.jpg" />
+    <Content Include="UploadedFiles\files\bottle.jpg" />
+    <Content Include="UploadedFiles\files\ch.jpg" />
+    <Content Include="UploadedFiles\files\img-sprite.png" />
+    <Content Include="UploadedFiles\files\label_new.png" />
+    <Content Include="UploadedFiles\files\logo.png" />
+    <Content Include="UploadedFiles\files\pi.jpg" />
+    <Content Include="UploadedFiles\files\pi1.jpg" />
+    <Content Include="UploadedFiles\files\pi3.jpg" />
+    <Content Include="UploadedFiles\files\pic1.jpg" />
+    <Content Include="UploadedFiles\files\pic10.jpg" />
+    <Content Include="UploadedFiles\files\pic11.jpg" />
+    <Content Include="UploadedFiles\files\pic12.jpg" />
+    <Content Include="UploadedFiles\files\pic13.jpg" />
+    <Content Include="UploadedFiles\files\pic2.jpg" />
+    <Content Include="UploadedFiles\files\pic3.jpg" />
+    <Content Include="UploadedFiles\files\pic4.jpg" />
+    <Content Include="UploadedFiles\files\pic5.jpg" />
+    <Content Include="UploadedFiles\files\pic6.jpg" />
+    <Content Include="UploadedFiles\files\pic7.jpg" />
+    <Content Include="UploadedFiles\files\pic8.jpg" />
+    <Content Include="UploadedFiles\files\review.png" />
+    <Content Include="UploadedFiles\files\rss.png" />
+    <Content Include="UploadedFiles\files\s1.jpg" />
+    <Content Include="UploadedFiles\files\s2.jpg" />
+    <Content Include="UploadedFiles\files\s3.jpg" />
+    <Content Include="UploadedFiles\files\s4.jpg" />
+    <Content Include="UploadedFiles\files\sh.jpg" />
+    <Content Include="UploadedFiles\files\si1.jpg" />
+    <Content Include="UploadedFiles\files\si2.jpg" />
+    <Content Include="UploadedFiles\files\si3.jpg" />
+    <Content Include="UploadedFiles\files\si4.jpg" />
+    <Content Include="UploadedFiles\files\star.png" />
+    <Content Include="UploadedFiles\files\tick1.png" />
+    <Content Include="UploadedFiles\files\twitter.png" />
+    <Content Include="UploadedFiles\files\wa.jpg" />
+    <Content Include="UploadedFiles\files\wat.jpg" />
+    <Content Include="UploadedFiles\files\zoom.png" />
+    <Content Include="UploadedFiles\images\IMG_6828.JPG" />
+    <Content Include="UploadedFiles\images\IMG_6919.JPG" />
+    <Content Include="UploadedFiles\images\IMG_E6289.JPG" />
+    <Content Include="UploadedFiles\_thumbs\Files\ba.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\baa.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\bag.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\bag1.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\bo.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\bott.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\bottle.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\ch.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\img-sprite.png" />
+    <Content Include="UploadedFiles\_thumbs\Files\label_new.png" />
+    <Content Include="UploadedFiles\_thumbs\Files\logo.png" />
+    <Content Include="UploadedFiles\_thumbs\Files\pi.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pi1.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pi3.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic1.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic10.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic11.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic12.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic13.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic2.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic3.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic4.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic5.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic6.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic7.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\pic8.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\review.png" />
+    <Content Include="UploadedFiles\_thumbs\Files\rss.png" />
+    <Content Include="UploadedFiles\_thumbs\Files\s1.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\s2.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\s3.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\s4.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\sh.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\si1.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\si2.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\si3.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\si4.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\star.png" />
+    <Content Include="UploadedFiles\_thumbs\Files\tick1.png" />
+    <Content Include="UploadedFiles\_thumbs\Files\twitter.png" />
+    <Content Include="UploadedFiles\_thumbs\Files\wa.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\wat.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\zoom.png" />
+    <Content Include="UploadedFiles\_thumbs\Images\IMG_6828.JPG" />
+    <Content Include="UploadedFiles\_thumbs\Images\IMG_6919.JPG" />
+    <Content Include="UploadedFiles\_thumbs\Images\IMG_E6289.JPG" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

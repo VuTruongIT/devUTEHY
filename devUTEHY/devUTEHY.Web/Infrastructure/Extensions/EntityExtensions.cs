@@ -27,5 +27,30 @@ namespace devUTEHY.Web.Infrastructure.Extensions
             loaiCongNghe.MetaDescription = loaiCongNgheVm.MetaDescription;
             loaiCongNghe.TrangThai = loaiCongNgheVm.TrangThai;
         }
+
+        public static void UpdateCongNghe(this CongNghe congNghe, CongNgheViewModel congNgheVm)
+        {
+            congNghe.ID = congNgheVm.ID;
+            congNghe.Ten = congNgheVm.Ten;
+            congNghe.TieuDe = congNgheVm.TieuDe;
+            congNghe.MoTa = congNgheVm.MoTa;
+            congNghe.LoaiCongNgheID = congNgheVm.LoaiCongNgheID;
+            congNghe.Icon = congNgheVm.Icon;
+            congNghe.Logo = congNgheVm.Logo;
+            congNghe.PhienBan = congNgheVm.PhienBan;
+            congNghe.STT = congNgheVm.STT;
+            congNghe.Tags = congNgheVm.Tags;
+            congNghe.HienThiTrangChu = congNgheVm.HienThiTrangChu;
+            congNghe.HienThiHot = congNgheVm.HienThiHot;
+
+            congNghe.NgayTao = congNgheVm.NgayTao;
+            congNghe.NguoiTao = congNgheVm.NguoiTao;
+            congNghe.NgayCapNhat = congNgheVm.NgayCapNhat;
+            congNghe.NguoiCapNhat = congNgheVm.NguoiCapNhat;
+            congNghe.MetaKeyword = congNgheVm.MetaKeyword;
+            congNghe.MetaDescription = congNgheVm.MetaDescription;
+            congNghe.TrangThai = congNgheVm.TrangThai;
+
+        }
     }
 }

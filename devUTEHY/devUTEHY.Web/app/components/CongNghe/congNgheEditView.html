@@ -1,0 +1,133 @@
+﻿  <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Cập nhật công nghệ: {{congNghe.Ten}}
+
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#">Công nghệ</a></li>
+        <li><a ui-sref="cong_nghes">Công nghệ</a></li>
+        <li class="active">Cập nhât</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">{{congNghe.Ten}}</h3>
+        </div><!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" novalidate name="frmUpdateCongNghe" role="form" ng-submit="UpdateCongNghe()">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tên công nghệ</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-change="GetSeoTitle()" ng-maxlength="256" required name="ten" ng-model="congnghe.Ten">
+                        <span ng-show="frmUpdateCongNghe.ten.$invalid" class="has-error">Phải nhập tên công nghệ</span>
+                        <span ng-show="frmUpdateCongNghe.ten.$error.maxlength" class="has-error">Tên công nghệ chỉ được 256 ký tự</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tiêu đề SEO</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="tieuDe" required ng-model="congnghe.TieuDe">
+                        <span ng-show="frmUpdateCongNghe.tieuDe.$invalid" class="has-error">Phải nhập tiêu đề SEO</span>
+                        <span ng-show="frmUpdateCongNghe.tieuDe.$error.maxlength" class="has-error">Tiêu đề SEO chỉ được 256 ký tự</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Mô tả ngắn</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="moTa" ng-maxlength="500" ng-model="congnghe.MoTa">
+                        <span ng-show="frmUpdateCongNghe.moTa.$error.maxlength" class="has-error">Mô tả chỉ được 500 ký tự</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Loại công nghệ</label>
+                    <div class="col-sm-10">
+                        <select name="LoaiCongNgheID" required class="form-control" ng-model="congnghe.LoaiCongNgheID" ng-options="option.ID as option.Ten for option in loaiCongNghes">
+                            <option value="">Chọn loại công nghệ</option>
+                        </select>
+                        <span ng-show="frmUpdateCongNghe.LoaiCongNgheID.$invalid" class="has-error">Phải chọn loại công nghệ</span>
+                        <input type="hidden" name="LoaiCongNgheID" ng-model="congnghe.LoaiCongNgheID" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Icon</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="icon" ng-model="congnghe.Icon">
+                        <button class="btn btn-default" type="button" ng-click="ChooseImageIcon()">Chọn Icon</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Logo</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="loGo" ng-model="congnghe.Logo">
+                        <button class="btn btn-default" type="button" ng-click="ChooseImageLogo()">Chọn Logo</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Phiên bản</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="phienBan" required ng-model="congnghe.PhienBan">
+                        <span ng-show="frmUpdateCongNghe.phienBan.$invalid" class="has-error">Phải nhập phiên bản</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Thứ tự</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" name="sTT" required ng-model="congnghe.STT">
+                        <span ng-show="frmUpdateCongNghe.sTT.$invalid" class="has-error">Phải nhập thứ tự</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tags</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="tags" ng-model="congnghe.Tags">
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Meta Keyword</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="metaKeyword" ng-model="congnghe.MetaKeyword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Meta Description</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="metaKeyword" ng-model="congnghe.MetaDescription"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="trangThai" ng-model="congnghe.TrangThai" ng-checked="congnghe.TrangThai"> Kích hoạt
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="hienThiTrangChu" ng-model="congnghe.HienThiTrangChu" ng-checked="congnghe.HienThiTrangChu"> Hiển thị trang chủ
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="hienThiHot" ng-model="congnghe.HienThiHot" ng-checked="congnghe.HienThiHot"> Hiển thị Hot
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                <button ui-sref="cong_nghes" class="btn btn-default">Hủy</button>
+                <button type="submit" ng-disabled="frmUpdateCongNghe.$invalid" class="btn btn-success pull-right">Lưu</button>
+            </div><!-- /.box-footer -->
+        </form>
+    </div><!-- /.box -->
+</section><!-- /.content -->

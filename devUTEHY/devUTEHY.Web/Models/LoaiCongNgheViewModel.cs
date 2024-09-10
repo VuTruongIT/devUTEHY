@@ -14,6 +14,7 @@ namespace devUTEHY.Web.Models
         public int? ThuTu { set; get; }
         public bool? HienThiTrangChu { set; get; }
         public virtual IEnumerable<KhoaHoc> KhoaHocs { set; get; }
+        public virtual IEnumerable<CongNghe> CongNghes { set; get; }
 
 
         public DateTime? NgayTao { set; get; }

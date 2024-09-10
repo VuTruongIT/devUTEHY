@@ -30,6 +30,8 @@ namespace devUTEHY.Model.Models
         public bool? HienThiTrangChu { set; get; }
 
         public virtual IEnumerable<KhoaHoc> KhoaHocs { set; get; }
+        public virtual IEnumerable<CongNghe> CongNghes { set; get; }
+
 
     }
 }
