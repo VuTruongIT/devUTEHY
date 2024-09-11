@@ -12,7 +12,7 @@ namespace devUTEHY.Mappings
             Mapper.CreateMap<CongNghe, CongNgheViewModel>();
             Mapper.CreateMap<Tag, TagViewModel>();
             Mapper.CreateMap<CongNgheTags, CongNgheTagsViewModel>();
-            Mapper.CreateMap<DanhMuc, DanhMucTagsViewModel>();
+            Mapper.CreateMap<DanhMuc, DanhMucViewModel>();
             Mapper.CreateMap<DanhMucTags, DanhMucTagsViewModel>();
 
         }

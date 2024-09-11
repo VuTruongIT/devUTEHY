@@ -1,7 +1,7 @@
 ﻿/// <reference path="../assets/admin/libs/angular/angular.js" />
 
 (function () {
-    angular.module('devUTEHY', ['devUTEHY.loai_cong_nghes','devUTEHY.cong_nghes','devUTEHY.common'])
+    angular.module('devUTEHY', ['devUTEHY.loai_cong_nghes', 'devUTEHY.cong_nghes', 'devUTEHY.danh_mucs', 'devUTEHY.common'])
         .config(config)
         .config(configAuthentication);
 

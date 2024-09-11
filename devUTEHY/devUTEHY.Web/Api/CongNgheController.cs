@@ -187,5 +187,21 @@ namespace devUTEHY.Web.Api
                 return response;
             });
         }
+
+        //7
+        [Route("getallparents")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _congNgheService.GetAll();
+
+                var responseData = Mapper.Map<IEnumerable<CongNghe>, IEnumerable<CongNgheViewModel>>(model);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
     }
 }

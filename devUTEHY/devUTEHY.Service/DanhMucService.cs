@@ -38,17 +38,17 @@ namespace devUTEHY.Service
     }
     public class DanhMucService : IDanhMucService
     {
-        private IDanhMucRepository _DanhMucRepository;
+        private IDanhMucRepository _danhMucRepository;
         private ITagRepository _tagRepository;
-        private IDanhMucTagsRepository _DanhMucTagsRepository;
+        private IDanhMucTagsRepository _danhMucTagsRepository;
 
         private IUnitOfWork _unitOfWork;
 
-        public DanhMucService(IDanhMucRepository DanhMucRepository, IDanhMucTagsRepository DanhMucTagsRepository,
+        public DanhMucService(IDanhMucRepository danhMucRepository, IDanhMucTagsRepository danhMucTagsRepository,
             ITagRepository _tagRepository, IUnitOfWork unitOfWork)
         {
-            this._DanhMucRepository = DanhMucRepository;
-            this._DanhMucTagsRepository = DanhMucTagsRepository;
+            this._danhMucRepository = danhMucRepository;
+            this._danhMucTagsRepository = danhMucTagsRepository;
             this._tagRepository = _tagRepository;
             this._unitOfWork = unitOfWork;
         }
@@ -56,12 +56,12 @@ namespace devUTEHY.Service
         //1
         public IEnumerable<DanhMuc> GetAll()
         {
-            return _DanhMucRepository.GetAll();
+            return _danhMucRepository.GetAll();
         }
 
         public IEnumerable<DanhMuc> Search(string keyword, int page, int pageSize, string sort, out int totalRow)
         {
-            var query = _DanhMucRepository.GetMulti(x => x.TrangThai && x.Ten.Contains(keyword));
+            var query = _danhMucRepository.GetMulti(x => x.TrangThai && x.Ten.Contains(keyword));
 
             switch (sort)
             {
@@ -78,15 +78,15 @@ namespace devUTEHY.Service
         public IEnumerable<DanhMuc> GetAll(string keyword)
         {
             if (!string.IsNullOrEmpty(keyword))
-                return _DanhMucRepository.GetMulti(x => x.Ten.Contains(keyword) || x.MoTa.Contains(keyword));
+                return _danhMucRepository.GetMulti(x => x.Ten.Contains(keyword) || x.MoTa.Contains(keyword));
             else
-                return _DanhMucRepository.GetAll();
+                return _danhMucRepository.GetAll();
         }
 
         //2
         public DanhMuc Add(DanhMuc danhMuc)
         {
-            var DanhMuc = _DanhMucRepository.Add(danhMuc);
+            var DanhMuc = _danhMucRepository.Add(danhMuc);
             _unitOfWork.Commit();
             if (!string.IsNullOrEmpty(DanhMuc.Tags))
             {
@@ -103,10 +103,10 @@ namespace devUTEHY.Service
                         _tagRepository.Add(tag);
                     }
 
-                    DanhMucTags DanhMucTags = new DanhMucTags();
-                    DanhMucTags.DanhMucID = DanhMuc.ID;
-                    DanhMucTags.TagID = tagId;
-                    _DanhMucTagsRepository.Add(DanhMucTags);
+                    DanhMucTags danhMucTags = new DanhMucTags();
+                    danhMucTags.DanhMucID = DanhMuc.ID;
+                    danhMucTags.TagID = tagId;
+                    _danhMucTagsRepository.Add(danhMucTags);
                 }
             }
             return DanhMuc;
@@ -115,19 +115,19 @@ namespace devUTEHY.Service
         //3
         public DanhMuc Delete(int id)
         {
-            return _DanhMucRepository.Delete(id);
+            return _danhMucRepository.Delete(id);
         }
 
         //4
         public void DeleteMulti(Expression<Func<DanhMuc, bool>> where)
         {
-            _DanhMucRepository.DeleteMulti(where);
+            _danhMucRepository.DeleteMulti(where);
         }
 
         //5
         public void Update(DanhMuc DanhMuc)
         {
-            _DanhMucRepository.Update(DanhMuc);
+            _danhMucRepository.Update(DanhMuc);
             if (!string.IsNullOrEmpty(DanhMuc.Tags))
             {
                 string[] tags = DanhMuc.Tags.Split(',');
@@ -142,11 +142,11 @@ namespace devUTEHY.Service
                         tag.Type = CommonConstants.DanhMucTags;
                         _tagRepository.Add(tag);
                     }
-                    _DanhMucTagsRepository.DeleteMulti(x => x.DanhMucID == DanhMuc.ID);
+                    _danhMucTagsRepository.DeleteMulti(x => x.DanhMucID == DanhMuc.ID);
                     DanhMucTags DanhMucTags = new DanhMucTags();
                     DanhMucTags.DanhMucID = DanhMuc.ID;
                     DanhMucTags.TagID = tagId;
-                    _DanhMucTagsRepository.Add(DanhMucTags);
+                    _danhMucTagsRepository.Add(DanhMucTags);
                 }
 
             }
@@ -154,7 +154,7 @@ namespace devUTEHY.Service
 
         public DanhMuc GetById(int id)
         {
-            return _DanhMucRepository.GetSingleById(id);
+            return _danhMucRepository.GetSingleById(id);
         }
 
         public void Save()

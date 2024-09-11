@@ -1,25 +1,22 @@
 ﻿(function (app) {
-    app.controller('loaiCongNgheListController', loaiCongNgheListController);
+    app.controller('danhMucListController', danhMucListController);
 
-    loaiCongNgheListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox', '$filter'];
+    danhMucListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox', '$filter'];
 
-    function loaiCongNgheListController($scope, apiService, notificationService, $ngBootbox, $filter) {
-        $scope.loaiCongNghes = [];
+    function danhMucListController($scope, apiService, notificationService, $ngBootbox, $filter) {
+        $scope.danhmucs = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
-        $scope.getLoaiCongNghes = getLoaiCongNghes;
+        $scope.getDanhMucs = getDanhMucs;
         $scope.keyword = '';
 
-        //1
         $scope.search = search;
-        //2
-        $scope.deleteLoaiCongNghe = deleteLoaiCongNghe;
-        //3
+        $scope.deleteDanhMuc = deleteDanhMuc;
         $scope.selectAll = selectAll;
-        $scope.deleteMultiple = deleteMultiple;
+        $scope.deleteMultipleDanhMucs = deleteMultipleDanhMucs;
 
-        //3b xử lý xóa nhiều
-        function deleteMultiple() {
+        //4
+        function deleteMultipleDanhMucs() {
             $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
                 var listId = [];
                 $.each($scope.selected, function (i, item) {
@@ -27,10 +24,10 @@
                 });
                 var config = {
                     params: {
-                        checkedLoaiCongNghe: JSON.stringify(listId)
+                        checkedDanhMucs: JSON.stringify(listId)
                     }
                 }
-                apiService.del('/api/loaicongnghes/deletemulti', config, function (result) {
+                apiService.del('/api/danhmuc/deletemulti', config, function (result) {
                     notificationService.displaySuccess('Xóa thành công ' + result.data + ' bản ghi.');
                     search();
                 }, function (error) {
@@ -39,23 +36,22 @@
             });
         }
 
-        //3a xử lý check chọn tất cả
+        //2
         $scope.isAll = false;
         function selectAll() {
             if ($scope.isAll === false) {
-                angular.forEach($scope.loaiCongNghes, function (item) {
+                angular.forEach($scope.danhmucs, function (item) {
                     item.checked = true;
                 });
                 $scope.isAll = true;
             } else {
-                angular.forEach($scope.loaiCongNghes, function (item) {
+                angular.forEach($scope.danhmucs, function (item) {
                     item.checked = false;
                 });
                 $scope.isAll = false;
             }
         }
-
-        $scope.$watch("loaiCongNghes", function (n, o) {
+        $scope.$watch("danhmucs", function (n, o) {
             var checked = $filter("filter")(n, { checked: true });
             if (checked.length) {
                 $scope.selected = checked;
@@ -65,15 +61,15 @@
             }
         }, true);
 
-        //2
-        function deleteLoaiCongNghe(id) {
+        //3
+        function deleteDanhMuc(id) {
             $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
                 var config = {
                     params: {
                         id: id
                     }
                 }
-                apiService.del('/api/loaicongnghes/delete', config, function () {
+                apiService.del('/api/danhmuc/delete', config, function () {
                     notificationService.displaySuccess('Xóa thành công');
                     search();
                 }, function () {
@@ -82,12 +78,12 @@
             });
         }
 
+
         //1
-        //khởi chạy lần đầu trả về danh sách đã phân trang
         function search() {
-            getLoaiCongNghes();
+            getDanhMucs();
         }
-        function getLoaiCongNghes(page) {
+        function getDanhMucs(page) {
             page = page || 0;
             var config = {
                 params: {
@@ -96,21 +92,21 @@
                     pageSize: 10
                 }
             }
-            apiService.get('/api/loaicongnghes/getall', config, function (result) {
+            apiService.get('/api/danhmuc/getall', config, function (result) {
                 if (result.data.TotalCount == 0) {
                     notificationService.displayWarning('Không có bản ghi nào được tìm thấy!');
                 } else {
                     notificationService.displaySuccess('Đã tìm thấy ' + result.data.TotalCount + ' bản ghi.');
                 }
-                $scope.loaiCongNghes = result.data.Items;
+                $scope.danhmucs = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.pagesCount = result.data.TotalPages;
                 $scope.totalCount = result.data.TotalCount;
             }, function () {
-                console.log('Load loaicongnghe failed.');
+                console.log('Load product failed.');
             });
         }
 
-        $scope.getLoaiCongNghes();
+        $scope.getDanhMucs();
     }
-})(angular.module('devUTEHY.loai_cong_nghes'));
+})(angular.module('devUTEHY.danh_mucs'));

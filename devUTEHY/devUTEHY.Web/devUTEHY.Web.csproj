@@ -239,6 +239,13 @@
     <Content Include="app\components\CongNghe\congNgheListController.js" />
     <Content Include="app\components\CongNghe\congNgheListView.html" />
     <Content Include="app\components\CongNghe\congNghes.module.js" />
+    <Content Include="app\components\DanhMuc\danhMucAddView.html" />
+    <Content Include="app\components\DanhMuc\danhMucAddController.js" />
+    <Content Include="app\components\DanhMuc\danhMucEditController.js" />
+    <Content Include="app\components\DanhMuc\danhMucEditView.html" />
+    <Content Include="app\components\DanhMuc\danhMucListController.js" />
+    <Content Include="app\components\DanhMuc\danhMucListView.html" />
+    <Content Include="app\components\DanhMuc\danhMucs.module.js" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
     <Content Include="app\components\home\rootController.js" />
@@ -4148,7 +4155,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\components\DanhMuc\" />
     <Folder Include="Assets\client\" />
     <Folder Include="Views\DanhMuc\" />
   </ItemGroup>
