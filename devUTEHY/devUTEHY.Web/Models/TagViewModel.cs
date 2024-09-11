@@ -1,4 +1,7 @@
-﻿namespace devUTEHY.Web.Models
+﻿using devUTEHY.Model.Models;
+using devUTEHY.Web.Models;
+
+namespace devUTEHY.Web.Models
 {
     public class TagViewModel
     {

@@ -81,10 +81,20 @@
     <Compile Include="Migrations\202409100531373_Updatetable.designer.cs">
       <DependentUpon>202409100531373_Updatetable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202409111447489_AddDanhMucAndDanhMucTags.cs" />
+    <Compile Include="Migrations\202409111447489_AddDanhMucAndDanhMucTags.designer.cs">
+      <DependentUpon>202409111447489_AddDanhMucAndDanhMucTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202409111455096_UpdateDanhMucTags.cs" />
+    <Compile Include="Migrations\202409111455096_UpdateDanhMucTags.designer.cs">
+      <DependentUpon>202409111455096_UpdateDanhMucTags.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CongNgheRepository.cs" />
-    <Compile Include="Repositories\CongNgheTagsRepositoy.cs" />
+    <Compile Include="Repositories\CongNgheTagsRepository.cs" />
+    <Compile Include="Repositories\DanhMucRepository.cs" />
+    <Compile Include="Repositories\DanhMucTagsRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\KhoaHocRepository.cs" />
     <Compile Include="Repositories\KhoaHocTagsRepository.cs" />
@@ -123,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202409100531373_Updatetable.resx">
       <DependentUpon>202409100531373_Updatetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409111447489_AddDanhMucAndDanhMucTags.resx">
+      <DependentUpon>202409111447489_AddDanhMucAndDanhMucTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409111455096_UpdateDanhMucTags.resx">
+      <DependentUpon>202409111455096_UpdateDanhMucTags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

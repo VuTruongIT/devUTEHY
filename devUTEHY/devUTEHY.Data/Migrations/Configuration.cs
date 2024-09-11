@@ -20,7 +20,7 @@
 
         protected override void Seed(devUTEHY.Data.devUTEHYDbContext context)
         {
-            CreateUser(context);
+            //CreateUser(context);
         }
         private void CreateUser(devUTEHYDbContext context)
         {

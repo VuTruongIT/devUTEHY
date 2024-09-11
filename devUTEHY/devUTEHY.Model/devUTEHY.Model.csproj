@@ -62,6 +62,8 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\CongNghe.cs" />
     <Compile Include="Models\CongNgheTags.cs" />
+    <Compile Include="Models\DanhMuc.cs" />
+    <Compile Include="Models\DanhMucTags.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\KhoaHoc.cs" />
     <Compile Include="Models\KhoaHocTags.cs" />

@@ -52,5 +52,27 @@ namespace devUTEHY.Web.Infrastructure.Extensions
             congNghe.TrangThai = congNgheVm.TrangThai;
 
         }
+
+
+        public static void UpdateDanhMuc(this DanhMuc danhMuc, DanhMucViewModel danhMucVm)
+        {
+            danhMuc.ID = danhMucVm.ID;
+            danhMuc.Ten = danhMucVm.Ten;
+            danhMuc.TieuDe = danhMucVm.TieuDe;
+            danhMuc.MoTa = danhMucVm.MoTa;
+            danhMuc.CongNgheID = danhMucVm.CongNgheID;
+            danhMuc.STT = danhMucVm.STT;
+            danhMuc.Tags = danhMucVm.Tags;
+            danhMuc.HienThiTrangChu = danhMucVm.HienThiTrangChu;
+
+            danhMuc.NgayTao = danhMucVm.NgayTao;
+            danhMuc.NguoiTao = danhMucVm.NguoiTao;
+            danhMuc.NgayCapNhat = danhMucVm.NgayCapNhat;
+            danhMuc.NguoiCapNhat = danhMucVm.NguoiCapNhat;
+            danhMuc.MetaKeyword = danhMucVm.MetaKeyword;
+            danhMuc.MetaDescription = danhMucVm.MetaDescription;
+            danhMuc.TrangThai = danhMucVm.TrangThai;
+
+        }
     }
 }

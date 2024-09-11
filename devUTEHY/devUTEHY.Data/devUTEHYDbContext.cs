@@ -13,14 +13,18 @@ namespace devUTEHY.Data
 
         public DbSet<LoaiCongNghe> LoaiCongNghes { set; get; }
         public DbSet<CongNghe> CongNghes { set; get; }
+        public DbSet<Tag> Tags { set; get; }
         public DbSet<CongNgheTags> CongNgheTags { set; get; }
+        public DbSet<DanhMuc> DanhMucs { set; get; }
+        public DbSet<DanhMucTags> DanhMucTags { set; get; }
+
+
 
 
         public DbSet<KhoaHoc> KhoaHocs { set; get; }
         public DbSet<KhoaHocTags> KhoaHocTags { set; get; }
         public DbSet<KienThucCongNghe> KienThucCongNghes { set; get; }
         public DbSet<KienThucCongNgheTags> KienThucCongNgheTags { set; get; }
-        public DbSet<Tag> Tags { set; get; }
 
 
         public DbSet<Error> Errors { set; get; }

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace devUTEHY.Model.Models
 {
-    [Table("CongNghe")]
-    public class CongNghe : Auditable
+    [Table("DanhMuc")]
+    public class DanhMuc : Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -28,20 +28,10 @@ namespace devUTEHY.Model.Models
         public string MoTa { set; get; }
 
         [Required]
-        public int LoaiCongNgheID { set; get; }
+        public int CongNgheID { set; get; }
 
-        [ForeignKey("LoaiCongNgheID")]
-        public virtual LoaiCongNghe LoaiCongNghe { set; get; }
-
-        [MaxLength(256)]
-        public string Icon { set; get; }
-
-        [MaxLength(256)]
-        public string Logo { set; get; }
-
-        [Required]
-        [MaxLength(100)]
-        public string PhienBan { set; get; }
+        [ForeignKey("CongNgheID")]
+        public virtual CongNghe CongNghe { set; get; }
 
         public int? STT { set; get; }
 
@@ -49,10 +39,7 @@ namespace devUTEHY.Model.Models
 
         public bool? HienThiTrangChu { set; get; }
 
-        public bool? HienThiHot { set; get; }
+        public virtual IEnumerable<DanhMucTags> DanhMucTags { set; get; }
 
-        public virtual IEnumerable<CongNgheTags> CongNgheTags { set; get; }
-
-        public virtual IEnumerable<DanhMuc> DanhMucs { set; get; }
     }
 }

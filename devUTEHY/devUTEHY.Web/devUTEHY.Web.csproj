@@ -204,6 +204,7 @@
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\CongNgheController.cs" />
+    <Compile Include="Api\DanhMucController.cs" />
     <Compile Include="Api\LoaiCongNgheController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -223,6 +224,8 @@
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\CongNgheTagsViewModel.cs" />
     <Compile Include="Models\CongNgheViewModel.cs" />
+    <Compile Include="Models\DanhMucTagsViewModel.cs" />
+    <Compile Include="Models\DanhMucViewModel.cs" />
     <Compile Include="Models\LoaiCongNgheViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -4145,7 +4148,9 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\components\DanhMuc\" />
     <Folder Include="Assets\client\" />
+    <Folder Include="Views\DanhMuc\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
