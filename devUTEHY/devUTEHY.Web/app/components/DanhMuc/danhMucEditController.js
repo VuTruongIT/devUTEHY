@@ -15,7 +15,7 @@
         $scope.GetSeoTitle = GetSeoTitle;
 
         function GetSeoTitle() {
-            $scope.danhmuc.TieuDe = commonService.getSeoTitle($scope.danhmuc.Ten);
+            $scope.danhMuc.TieuDe = commonService.getSeoTitle($scope.danhMuc.Ten);
         }
 
         //1

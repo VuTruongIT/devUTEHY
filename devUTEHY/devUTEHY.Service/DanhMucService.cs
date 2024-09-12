@@ -78,7 +78,7 @@ namespace devUTEHY.Service
         public IEnumerable<DanhMuc> GetAll(string keyword)
         {
             if (!string.IsNullOrEmpty(keyword))
-                return _danhMucRepository.GetMulti(x => x.Ten.Contains(keyword) || x.MoTa.Contains(keyword));
+                return _danhMucRepository.GetMulti(x => x.Ten.Contains(keyword) || x.Tags.Contains(keyword));
             else
                 return _danhMucRepository.GetAll();
         }
