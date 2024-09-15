@@ -89,6 +89,14 @@
     <Compile Include="Migrations\202409111455096_UpdateDanhMucTags.designer.cs">
       <DependentUpon>202409111455096_UpdateDanhMucTags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202409150245009_UpdateKienThucCongNghe.cs" />
+    <Compile Include="Migrations\202409150245009_UpdateKienThucCongNghe.designer.cs">
+      <DependentUpon>202409150245009_UpdateKienThucCongNghe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202409150648577_UpdateKienThucCongNgheL2.cs" />
+    <Compile Include="Migrations\202409150648577_UpdateKienThucCongNgheL2.designer.cs">
+      <DependentUpon>202409150648577_UpdateKienThucCongNgheL2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CongNgheRepository.cs" />
@@ -139,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202409111455096_UpdateDanhMucTags.resx">
       <DependentUpon>202409111455096_UpdateDanhMucTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409150245009_UpdateKienThucCongNghe.resx">
+      <DependentUpon>202409150245009_UpdateKienThucCongNghe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409150648577_UpdateKienThucCongNgheL2.resx">
+      <DependentUpon>202409150648577_UpdateKienThucCongNgheL2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
